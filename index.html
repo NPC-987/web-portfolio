@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿文的個人介紹</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="/css/my.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            color: #fff;
+        }
+
+        /* 背景影片 */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* 頂部標題 */
+        .header-title {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 140px;
+        }
+
+        /* 霓虹光暈效果 */
+        .neon-text {
+            font-size: 2rem;
+            color: #fff;
+            text-shadow:
+                0 0 5px #27ae60,
+                0 0 10px #27ae60,
+                0 0 20px #27ae60,
+                0 0 40px #2ecc71;
+            animation: glow 1.5s ease-in-out infinite alternate, fadeInScale 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #27ae60, 0 0 10px #27ae60;
+            }
+
+            to {
+                text-shadow: 0 0 10px #2ecc71, 0 0 20px #2ecc71, 0 0 40px #2ecc71;
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* 下方段落的淡入效果 */
+        .fade-in-delay-1,
+        .fade-in-delay-2,
+        .fade-in-delay-3,
+        .fade-in-delay-4,
+        .fade-in-delay-5 {
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .fade-in-delay-1 {
+            animation-delay: 0.8s;
+        }
+
+        .fade-in-delay-2 {
+            animation-delay: 1.5s;
+        }
+
+        .fade-in-delay-3 {
+            animation-delay: 2.2s;
+        }
+
+        .fade-in-delay-4 {
+            animation-delay: 2.7s;
+        }
+
+        .fade-in-delay-5 {
+            animation-delay: 3s;
+        }
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 個人介紹 */
+        #s02 {
+            margin-bottom: 50px;
+        }
+
+        /* 內層四個卡片 */
+        .intro-card {
+            background: rgba(30, 30, 30, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            color: #eee;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* 卡片彼此更分明 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        /* 卡片 hover 效果 */
+        .intro-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 6px 15px rgba(0, 255, 150, 0.3);
+        }
+
+        /* 卡片標題 */
+        .intro-card h3 {
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* 取消內部分隔線，避免誤導 */
+        .intro-card::after {
+            display: none;
+        }
+
+        /* 文字重點：用亮綠 + 藍色備用 */
+        .intro-card strong {
+            color: #00ffcc;
+        }
+
+        /* 跑馬燈容器 */
+        .marquee-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            position: relative;
+            margin-top: 1px;
+        }
+
+        .marquee-inner {
+            display: inline-flex;
+            animation: scroll-left 20s linear infinite;
+        }
+
+        .marquee-inner:hover {
+            animation-play-state: paused;
+        }
+
+        /* 這是我的跑馬燈 */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        .roller-box {
+            flex: 0 0 auto;
+            width: 340px;
+            margin: 0 15px;
+            position: relative;
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            color: #000;
+        }
+
+        .roller-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+
+        .roller {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: top 0.5s ease;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .roller-box:hover .roller {
+            top: 0;
+        }
+
+        .btn-outline-light {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: 0.4s;
+            text-decoration: none;
+        }
+
+        .btn-outline-light:hover {
+            background: linear-gradient(to bottom, #0f5132, #198754);
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #198754;
+        }
+    </style>
+</head>
+
+<body class="text-center">
+    <!-- 背景影片 -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="./images/3130284-uhd_3840_2160_30fps.mp4" type="video/mp4">
+    </video>
+
+    <!-- 頂部標題 -->
+    <section id="s01" class="header-title text-center">
+        <div class="g-2">
+            <h1 class="fw-bold mb-4 neon-text">你好 我是阿文</h1>
+            <p class=" fs-3 lead mb-2 fade-in-delay-1">一個愛玩遊戲也愛寫程式的工程師</p>
+            <p class=" fs-3 mb-2 fade-in-delay-2">
+                專注於 <span class=" fs-3 text-info fw-bold">HTML / CSS / JS / Linux</span>，<br>
+                最近還在研究 <span class=" fs-3 text-warning fw-bold">Web3</span> 與 <span
+                    class="fs-3 text-success fw-bold">自動化機器人
+                    🤖</span>
+            </p>
+            <p class=" mb-0 fs-1 fst-italic text-light fade-in-delay-3">這裡是我的小宇宙，歡迎探索 🚀</p>
+        </div>
+    </section>
+
+    <!-- 我的介紹 -->
+    <h2 class="fw-bold mt-5 mb-4 text-center">我的介紹</h2>
+    <section id="s02" class="mt-0">
+        <div class="container">
+
+            <!-- 第一行 -->
+            <div class="row mb-4">
+                <!-- 關於我 -->
+                <div class="col-md-6 wow animate__animated animate__fadeInDown" data-wow-duration="2s"
+                    data-wow-delay="2.5s">
+                    <div class="intro-card ">
+                        <h3><i class="fa-solid fa-user"></i> 關於我</h3>
+                        <p class="fs-6 wow animate__animated animate__fadeInDown" data-wow-duration="2s"
+                            data-wow-delay="2.6s">
+                            非科班出身，卻因生活需求開始自學程式。<br>
+                            習慣把問題拆解，從小工具做到完整平台。<br>
+                            曾開發放貸機器人與二手平台，驗證學習成果。<br>
+                            相信 <strong>實戰能力更為重要</strong>。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 專案經驗 -->
+                <div class="col-md-6 wow animate__animated animate__fadeInDown" data-wow-duration="2s"
+                    data-wow-delay="3s">
+                    <div class="intro-card">
+                        <h3><i class="fa-solid fa-rocket"></i> 專案經驗</h3>
+                        <p class="wow animate__animated animate__fadeInDown" data-wow-duration="2s"
+                            data-wow-delay="3.1s">
+                            <strong>個人簡介網站</strong>｜背景影片、履歷卡片、作品集展示<br>
+                            <strong>焦阿二手平台</strong>｜會員註冊、商品上架、交換體驗<br>
+                            <strong>重機展示網站</strong>｜版型修改、首頁設計、產品介紹<br>
+                            <strong>WordPress</strong>｜首頁設計、特色模組整合，優化體驗
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二行 -->
+            <div class="row">
+                <!-- 技能 -->
+                <div class="col-md-6 wow animate__animated animate__fadeInDown" data-wow-duration="2.5s"
+                    data-wow-delay="3.5s">
+                    <div class="intro-card">
+                        <h3><i class="fa-solid fa-code"></i> 技能</h3>
+                        <p class="wow animate__animated animate__fadeInDown" data-wow-duration="2.5s"
+                            data-wow-delay="3.6s">
+                            <strong>前端：</strong> HTML / CSS / Bootstrap / JavaScript<br>
+                            <strong>後端：</strong> PHP / Laravel / MySQL<br>
+                            <strong>其他：</strong> Linux 操作
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 學習歷程 -->
+                <div class="col-md-6 wow animate__animated animate__fadeInDown" data-wow-duration="2.5s"
+                    data-wow-delay="3.9s">
+                    <div class="intro-card">
+                        <h3><i class="fa-solid fa-book"></i> 學習歷程</h3>
+                        <p class="wow animate__animated animate__fadeInDown" data-wow-duration="2.5s"
+                            data-wow-delay="4s">
+                            高職餐飲科畢業（跨領域自學）<br>
+                            雲端課程：Linux / Java / PHP / MySQL<br>
+                            專案實作 → <strong>轉換為實際可用產品</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<p class="text-light fst-italic">👇 繼續往下，看看我的作品 👇</p>
+
+    <!-- 作品展示-->
+    <section id="s03">
+        <h2 class="fw-bold">我的作品集</h2>
+        <div class="container">
+            <div class="marquee-wrapper">
+                <div class="marquee-inner">
+
+                    <!-- ===== 第一組作品 ===== -->
+                    <div class="roller-box ">
+                        <div class="card-header fs-3 text-bg-light text-center fw-bold">奇妙網址</div>
+                        <img src="./gif/hehe3.gif" class="roller-photo" alt="奇妙網址">
+                        <div class="roller">
+                            <a href="web202505" target="_blank" class="btn btn-outline-light">還在搬運</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 text-bg-warning text-center fw-bold">旅館首頁</div>
+                        <img src="./gif/hehe5.gif" class="roller-photo" alt="旅館首頁">
+                        <div class="roller">
+                            <a href="wp01" target="_blank" class="btn btn-outline-light">還在搬運</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 text-bg-primary text-center fw-bold">重機網址</div>
+                        <img src="./gif/hehe2.gif" class="roller-photo" alt="重機網址">
+                        <div class="roller">
+                            <a href="wp02" target="_blank" class="btn btn-outline-light">還在搬運</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 text-bg-success text-center fw-bold">餐廳首頁</div>
+                        <img src="./gif/hehe4.gif" class="roller-photo" alt="餐廳首頁">
+                        <div class="roller">
+                            <a href="wp03" target="_blank" class="btn btn-outline-light">還在搬運</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 text-bg-danger text-center fw-bold">我的商鋪</div>
+                        <img src="./gif/hehe6.gif" class="roller-photo" alt="我的商鋪">
+                        <div class="roller">
+                            <a href="20250722.html" target="_blank" class="btn btn-outline-light">點擊進入</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 bg-19 text-center fw-bold">焦阿的二手平台</div>
+                        <img src="./gif/hehe7.gif" class="roller-photo" alt="焦阿的二手平台">
+                        <div class="roller">
+                            <a href="/project/20250812-index.html" target="_blank"
+                                class="btn btn-outline-light">點擊進入</a>
+                        </div>
+                    </div>
+
+                    <!-- ===== 第二組作品 (複製一份用於無縫循環) ===== -->
+                    <div class="roller-box">
+                        <div class="card-header fs-3 text-bg-light text-center fw-bold">奇妙網址</div>
+                        <img src="./gif/hehe3.gif" class="roller-photo" alt="奇妙網址">
+                        <div class="roller">
+                            <a href="/web202505" target="_blank" class="btn btn-outline-light">點擊進入</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 text-bg-warning text-center fw-bold">旅館首頁</div>
+                        <img src="./gif/hehe5.gif" class="roller-photo" alt="旅館首頁">
+                        <div class="roller">
+                            <a href="/wp01" target="_blank" class="btn btn-outline-light">點擊進入</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 text-bg-primary text-center fw-bold">重機網址</div>
+                        <img src="./gif/hehe2.gif" class="roller-photo" alt="重機網址">
+                        <div class="roller">
+                            <a href="/wp02" target="_blank" class="btn btn-outline-light">點擊進入</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 text-bg-success text-center fw-bold">餐廳首頁</div>
+                        <img src="./gif/hehe4.gif" class="roller-photo" alt="餐廳首頁">
+                        <div class="roller">
+                            <a href="/wp03" target="_blank" class="btn btn-outline-light">點擊進入</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 text-bg-danger text-center fw-bold">我的商鋪</div>
+                        <img src="./gif/hehe6.gif" class="roller-photo" alt="我的商鋪">
+                        <div class="roller">
+                            <a href="/20250722.html" target="_blank" class="btn btn-outline-light">點擊進入</a>
+                        </div>
+                    </div>
+
+                    <div class="roller-box">
+                        <div class="card-header fs-3 bg-19 text-center fw-bold">焦阿的二手平台</div>
+                        <img src="./gif/hehe7.gif" class="roller-photo" alt="焦阿的二手平台">
+                        <div class="roller">
+                            <a href="/project/20250812-index.html" target="_blank"
+                                class="btn btn-outline-light">點擊進入</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>

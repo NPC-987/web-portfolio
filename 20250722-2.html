@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner {
+            margin-top: 0;
+            max-height: 200px;
+            height: 150px;
+            background-image: url(images/moto6.jpg);
+            height: 280px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .timeline-section {
+            position: relative;
+        }
+
+        .timeline-section::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--bg-color07);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #text {
+            background-color: var(--roller-bg11);
+        }
+
+        .bg-cover:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        @media screen and (max-width:768px) {
+
+            .timeline-section::before,
+            .timeline-section-pointer::before {
+                display: none !important;
+            }
+
+        }
+
+        body {
+            background-image: url(/images/motobackground3.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg  bg-dark navbar-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand fw-900 text-danger fs-2" href="#"><i
+                                class="fa-solid fa-motorcycle fa-2x"></i>Moto</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
+                                <li class="nav-item ">
+                                    <a class="nav-link active" aria-current="page" href="20250722.html"><i
+                                            class="fa-solid fa-house text-success"></i> 首頁</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/20250722-2.html"><i
+                                            class="fa-solid fa-timeline text-info "></i> 關於我們</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active " href="/20250722-3.html" id="navbarDropdown"
+                                        role="button" data-bs-toggle="" aria-expanded="false">
+
+                                        <i class="fa-solid fa-cart-shopping text-danger"></i>
+                                        商品介紹
+                                    </a>
+                                </li>
+
+                                <!--暫時用不到
+                                 <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="/20250722-3.html">所有車種</a>
+                                    <div class="dropdown-divider"></div>
+                                       
+                                    <a class="dropdown-item" href="20250722-3.html?type=superbike">仿賽</a>
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="20250722-3.html?type=street">街車</a>
+                                    <div class="dropdown-divider"></div>
+                                     <a class="dropdown-item" href="#">Something else here</a>
+                                  -->
+                        </div>
+                        </ul>
+                        <!--<li class="nav-item">
+                                <a class="nav-link disabled" href="#">Something else</a>
+                            </li>-->
+
+                        <!--<form class="d-flex" role="search">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>-->
+                    </div>
+            </div>
+            </nav>
+        </div>
+    </div>
+    <!-- 以上是選單 以下是主題 -->
+    <div class="banner"></div>
+    <div class="container mb-5">
+        <div class="timeline-section">
+            <div class="row align-items-center mt-3 timeline-section-pointer">
+                <div class="col-md-6 align-items-center text-center text-white fs-5 fw-900">
+                    <div class="h2 text-warning">關於我們</div>
+                    <p class="mb-0" id="text">我們不只騎車，<br>
+                        我們走的是一條，把風聲當成節奏，把自由當成信仰的路。<br>
+                        從改裝、機能、賽道到公路，<br>
+                        我們相信——<br>
+                        騎士不是叛逆，<br>
+                        而是一種對生活不妥協的選擇。
+                    </p>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-cover top-roller-box" style="background-image:url(images/moto2.jpg); height: 260px;">
+                        <div class="top-roller">
+                            <a href="#" class="btn btn-success d-block mx-auto">查看更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-3 flex-md-row-reverse timeline-section-pointer">
+                <div class="col-md-6 align-items-center text-center text-white  fs-5 fw-900">
+                    <div class="h2  text-warning">我們的初衷</div>
+                    <p class="mb-3" id="text">這裡<br>
+                        是給懂轉速聲浪比語言更誠實的人<br>
+                        一個歸屬。<br>
+                        每一次催油門，都是對世界說：<br>
+                        我還活著，還在追，還沒放棄。<br>
+                        <br>
+                        加入我們，別只是通勤，
+                        來上路，去活出你想要的節奏。
+                    </p>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-cover left-roller-box"
+                        style="background-image:url(images/moto3.jpg); height: 260px;">
+                        <div class="left-roller">
+                            <a href="#" class="btn btn-success d-block mx-auto">查看更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-1 timeline-section-pointer">
+                <div class="col-md-6 align-items-center  text-center text-white fs-5 fw-900">
+                    <div class="h2  text-warning">聯絡我們</div>
+                    <p class="mb-0" id="text">
+                        我們都在這裡，等你點火啟程。<br>
+                        📍 地址：台中市自由路二段 888888 號<br>
+                        📞 電話：04-1234-5678 <br>
+                        📧 信箱：rider@motohero.tw <br>
+                        🕘 營業時間：週一至週六 09:00－18:00（週日休息） <br>
+                        📱 Facebook / IG / LINE：@MotoHero <br>
+                        別只是轉速上升，讓聯繫也跟上熱血節奏！</p>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-cover right-roller-box"
+                        style="background-image:url(images/moto4.jpg); height: 260px; border: 0.5px solid;">
+                        <div class="right-roller">
+                            <a href="#" class="btn btn-success d-block mx-auto">查看更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer bg-dark text-white text-center fs-4 fw-900 py-2 mt-3">Power By Moto</div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    </div>
+</body>
+
+</html>

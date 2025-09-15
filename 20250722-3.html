@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moto-product</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <style>
+        .banner {
+            margin-top: 0;
+            max-height: 200px;
+            height: 150px;
+            background-image: url(images/moto6.jpg);
+            height: 280px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        body {
+            background-image: url(/images/motobackground3.jpg);
+            background-size: cover;
+            background-position: center center;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg  bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-900 text-danger fs-2" href="#"><i
+                            class="fa-solid fa-motorcycle fa-2x"></i>Moto</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="20250722.html"><i
+                                        class="fa-solid fa-house text-success"></i> 首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="20250722-2.html"><i
+                                        class="fa-solid fa-timeline text-info "></i> 關於我們</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active " href="20250722-3.html" id="navbarDropdown" role="button"
+                                    data-bs-toggle="" aria-expanded="false">
+
+                                    <i class="fa-solid fa-cart-shopping text-danger"></i>
+                                    商品介紹
+                                </a>
+                            </li>
+
+                            <!-- 用不到 先隱藏
+                            <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="/20250722-3.html">所有車種</a>
+                                    <div class="dropdown-divider"></div>
+                                       
+                                    <a class="dropdown-item" href="20250722-3.html?type=superbike">仿賽</a>
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="20250722-3.html?type=street">街車</a>
+                                    <div class="dropdown-divider"></div>
+                                     <a class="dropdown-item" href="#">Something else here</a>
+                                  -->
+                    </div>
+                    </ul>
+                    <!--<li class="nav-item">
+                                <a class="nav-link disabled" href="#">Something else</a>
+                            </li>-->
+
+                    <!--<form class="d-flex" role="search">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>-->
+                </div>
+        </div>
+        </nav>
+    </div>
+    </div>
+    <div class="banner"></div>
+    <!-- 以上是選單 以下是主題 -->
+    <div class="container">
+        <div class="row justify-content-center" id="mydata">
+            <div class="col-6">
+                <select name="" id="type_select" class="form-select" style="margin-top: -20px;">
+                    <option value="all" class="text-center">--所有商品--</option>
+                    <option value="superbike">仿賽</option>
+                    <option value="streetbike">街車</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="product_list">
+            <div class="h3 text-warning fw-900 my-3">|產品介紹|<small class="text-muted">product</small></div>
+            <div class="col-6 col-md-4 col-lg-6 mt-3">
+                <div class="bg-cover" style="background-image: url(images/moto5.jpg); height: 280px;"></div>
+                <div class="h3 text-center fw-900 text-success">產品名稱</div>
+                <p>價格:XXX元</p>
+                <p>簡介:<br>這是一台車車車車車車車車車車車</p>
+                <a href="20250722-4.html?type=superbike&id=moto1" class="btn btn-primary">查看更多</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer bg-dark text-white text-center fs-4 fw-900 py-2 mt-3">Power By Moto</div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        //宣告變數
+        var all_data = {}; // 儲存所有商品資料 
+        var selected_type;// 儲存選擇的車種類型
+        var filter_data = [];// 儲存篩選後的資料
+
+
+
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "js/moto.json",
+                dataType: "json",
+                async: "false",
+                success: function (data) {
+                    console.log(all_data);//除錯用
+                    all_data = data; // 將資料儲存到全域變數
+                    showAllProducts(); // 初始載入顯示全部商品
+                },
+                error: function () {
+                    alert("連線錯誤!-js/moto.json ");
+                }
+            });
+
+            //監聽
+            $("#type_select").change(function () {
+                console.log($(this).val());//除錯用
+                selected_type = $(this).val();// 取得選擇值
+                filter_data = [];// 每次先清空
+
+                // 根據選擇的車種類型篩選資料
+                if (selected_type === "superbike") {
+                    filter_data = all_data.superbike;
+                } else if (selected_type === "streetbike") {
+                    filter_data = all_data.streetbike;
+                } else if (selected_type === "all") {
+                    filter_data = [...all_data.superbike, ...all_data.streetbike];
+                }
+
+                showFilterProducts();// 顯示篩選後的資料
+            });
+
+            // 顯示篩選後資料用的函式
+            function showFilterProducts() {
+                $("#product_list").empty(); // 清空舊畫面
+
+                // 用 jQuery each() 遍歷 filter_data 陣列
+                $.each(filter_data, function (i, item) {
+                    let productType = selected_type === "all"
+                        ? (all_data.superbike.some(p => p.id === item.id) ? "superbike" : "streetbike")
+                        : selected_type;
+
+                    let content = `
+  <div class="col mt-5">
+    <div class="card h-100 d-flex flex-column">
+      <div class="bg-cover" style="background-image: url(${item.image}); height: 280px; background-size: cover; background-position: center;"></div>
+      <div class="card-body flex-grow-1 d-flex flex-column" style="background-color:black;">
+        <h5 class="card-title text-white fw-800 fs-1 text-center" style="min-height: 48px;">${item.name}</h5>
+        <p class="text-light fs-4 fw-500">價格：${item.price}</p>
+        <p class="text-warning fs-5 fw-600">簡介：${item.description}</p>
+      </div>
+      <div class="card-footer bg-transparent border-0 mt-auto">
+        <a href="20250722-4.html?type=${productType}&id=${item.id}" class="btn btn-secondary d-block mx-auto">查看更多</a>
+      </div>
+    </div>
+  </div>
+`;
+
+                    $("#product_list").append(content);// 把每一筆資料插入到畫面上
+                });
+            }
+
+            // 預設初次載入顯示全部資料
+            function showAllProducts() {
+                selected_type = "all"; // 預設值
+                filter_data = [...all_data.superbike, ...all_data.streetbike];
+                showFilterProducts();
+            }
+        });
+    </script>
+</body>
+
+</html>

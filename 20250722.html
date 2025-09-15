@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fisrtpage</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<style>
+    body {
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url(images/moto.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+    }
+
+    .word01 {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 25px;
+        width: 60%;
+        margin-top: 10%;
+        margin-left: 40%;
+        box-shadow: 2px 2px 4px 2px #000;
+    }
+
+    .word02 {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 25px;
+        width: 50%;
+        margin-top: 20%;
+        margin-left: 70%;
+        box-shadow: 2px 2px 4px 2px #000;
+    }
+
+    @media screen and (max-width:768px) {
+        body {
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url(images/moto1.jpg);
+        }
+
+        .word01 {
+            margin: 0;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .word02 {
+            margin: 0;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg  bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-900 text-danger fs-2" href="#"><i
+                            class="fa-solid fa-motorcycle fa-2x"></i>Moto</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="20250722.html"><i
+                                        class="fa-solid fa-house text-success"></i> 首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="20250722-2.html"><i
+                                        class="fa-solid fa-timeline text-info"></i>關於我們</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="20250722-3.html" id="navbarDropdown"
+                                    role="button" data-bs-toggle="" aria-expanded="false">
+
+                                    <i class="fa-solid fa-cart-shopping text-danger"></i>
+                                    商品介紹
+                                </a></li>
+
+                                <!-- <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="/20250722-3.html">所有車種</a>
+                                    <div class="dropdown-divider"></div>
+                                       
+                                    <a class="dropdown-item" href="20250722-3.html?type=superbike">仿賽</a>
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="20250722-3.html?type=street">街車</a>
+                                    <div class="dropdown-divider"></div>
+                                     <a class="dropdown-item" href="#">Something else here</a>
+                                  -->
+                                </div>
+                        </ul>
+                        <!--<li class="nav-item">
+                                <a class="nav-link disabled" href="#">Something else</a>
+                            </li>-->
+
+                        <!--<form class="d-flex" role="search">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>-->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-4">
+            <div class="word01 fs-3 text-white round rounded-5">騎車，不只是移動，更是乘載靈魂的旅行</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-4">
+            <div class="word02 fs-2 text-white round rounded-5">在引擎聲中，慢慢與自己對話</div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

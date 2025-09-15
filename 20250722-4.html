@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner {
+            margin-top: 0;
+            max-height: 200px;
+            height: 150px;
+            background-image: url(images/moto6.jpg);
+            height: 280px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .box01 {
+            width: 120px;
+            height: 120px;
+            background-color: var(--bg-color08);
+            display: inline-block;
+        }
+
+        .box02 {
+            width: 120px;
+            height: 120px;
+            background-color: var(--bg-color01);
+            display: inline-block;
+        }
+
+        body {
+            background-image: url(/images/motobackground3.jpg);
+            background-size: cover;
+        }
+
+        .title-shift {
+            margin-left: 40px;
+        }
+
+        #showimg {
+            background-color: black;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 992px) {
+            .title-shift {
+                margin-left: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg  bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-900 text-danger fs-2" href="#"><i
+                            class="fa-solid fa-motorcycle fa-2x"></i>Moto</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="20250722.html"><i
+                                        class="fa-solid fa-house text-success"></i> 首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/20250722-2.html"><i
+                                        class="fa-solid fa-timeline text-info"></i>關於我們</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/20250722-3.html" id="navbarDropdown" role="button"
+                                    data-bs-toggle="" aria-expanded="false">
+
+                                    <i class="fa-solid fa-cart-shopping text-danger"></i>
+                                    商品介紹
+                                </a>
+                            </li>
+
+                            <!-- 用不到先隱藏
+                            <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="/20250722-3.html">所有車種</a>
+                                    <div class="dropdown-divider"></div>
+                                       
+                                    <a class="dropdown-item" href="20250722-3.html?type=superbike">仿賽</a>
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="20250722-3.html?type=street">街車</a>
+                                    <div class="dropdown-divider"></div>
+                                     <a class="dropdown-item" href="#">Something else here</a>
+                                  -->
+                    </div>
+                    </ul>
+                    <!--<li class="nav-item">
+                                <a class="nav-link disabled" href="#">Something else</a>
+                            </li>-->
+
+                    <!--<form class="d-flex" role="search">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>-->
+                </div>
+        </div>
+        </nav>
+    </div>
+    </div>
+    <!-- 以上是選單 以下是主題 -->
+    <div class="banner"></div><!-- 上方背景圖 -->
+
+    <main class="flex-grow-1">
+        <div class="container">
+            <div class="h2 my-4 text-white title-shift">|產品細節| <small>Details </small></div>
+
+            <div class="row mt-1 " id="product-detail">
+                <!-- 左側圖片區塊 -->
+                <div class=" col-12 col-md-10 col-lg-8 col-xl-7">
+                    <!-- 主圖片 -->
+                    <div class="mb-3 text-center">
+                        <img src="images/cake01.jpg" class="img-fluid img-thumbnail" alt="" id="showimg"
+                            style="height: 500px; width: auto; max-width: 100%;">
+                    </div>
+
+                    <!-- 小圖列表 暫時用不到
+                <ul class="list-unstyled d-flex overflow-auto" id="myallimg">
+                    <li class="p-1 me-2 rounded-2">
+                        <div class="box01 bg-cover" style="background-image: url(images/cake01.jpg);"></div>
+                    </li>
+                    <li class="p-1 me-2 rounded-2">
+                        <div class="box01 bg-cover" style="background-image: url(images/cake02.jpg);"></div>
+                    </li>
+                    <li class="p-1 me-2 rounded-2">
+                        <div class="box01 bg-cover" style="background-image: url(images/cake03.jpg);"></div>
+                    </li>
+                    <li class="p-1 me-2 rounded-2">
+                        <div class="box01 bg-cover" style="background-image: url(images/cake04.jpg);"></div>
+                    </li>
+                    <li class="p-1 me-2 rounded-2">
+                        <div class="box01 bg-cover" style="background-image: url(images/cake05.jpg);"></div>
+                    </li>
+                </ul>
+                -->
+                </div>
+
+                <!-- 右側產品說明 -->
+                <div class="col-md-10 col-lg-4 col-xl-5 d-flex flex-column bg-black text-light" style="height: 100%;">
+                    <h2 id="moto-title" class="my-2 fw-600 bg-warning text-black">該車款特色介紹</h2>
+                    <p id="moto-name" class="fs-2 fw-900 ">:superbike</p>
+                    <p id="moto-price" class="fs-4 fw-700 ">價格:99999元</p>
+                    <p id="moto-type" class="fs-4">種類:
+                        <span class="text-bg-warning badge">雙缸</span>
+                        <span class="text-bg-danger badge">599c.c.</span>
+                    </p>
+
+                    <details class="my-1">
+                        <summary class="h5 text- fs-4">產品詳細介紹</summary>
+                        <p class="fs-5" id="moto-desc">這是一台車的介紹內容</p>
+                    </details>
+
+                    <input type="text" class="form-control mt-0">
+                    <button class="btn btn-primary my-2">訂購</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <div class="footer bg-dark text-white text-center fs-4 fw-900 py-1">Power By Moto</div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        // 抓網址中的 type 和 id，例如 ?type=superbike&id=moto2
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get("type");
+        const id = urlParams.get("id");
+
+        $.ajax({
+            url: "js/moto.json",
+            dataType: "json",
+            success: function (data) {
+                //  防呆：先檢查 type 有無對應分類
+                if (!data[type]) {
+                    $("#product-detail").html('<div class="alert alert-danger">分類參數錯誤，查無類別：' + type + '</div>');
+                    return;
+                }
+
+                let allData = data[type];
+                let target = allData.find(item => item.id === id);
+
+                //  防呆：檢查 id 是否存在於該類別中
+                if (!target) {
+                    console.error("找不到對應商品資料，請檢查 ID 或 JSON 結構");
+                    $("#product-detail").html('<div class="alert alert-danger">查無此商品：' + id + '</div>');
+                    return;
+                }
+
+
+                $("#showimg").attr("src", target.image);
+                $("#moto-name").text(target.name);
+                $("#moto-price").text("價格:" + target.price);
+                $("#moto-type").html(`
+                        <span class="text-bg-warning badge">${target.type}</span>
+                        <span class="text-bg-danger  badge">${target.cc}</span> `)
+                const detail = target.detail || target.description || "(暫無詳細介紹)";
+                console.log("載入的詳細介紹內容：", detail);
+                console.log("目前讀到的商品 ID：", id);
+                console.log("商品資料物件：", target);
+
+                $("#moto-desc").html(detail.replace(/\n/g, "<br>"));
+
+                $("#moto-title").text(target.title);
+            },
+            error: function () {
+                $("#product-detail").html('<div class="alert alert-danger">載入商品資料失敗，請稍後再試。</div>');
+            }
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

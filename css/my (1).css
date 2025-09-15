@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+
+/* ===== 自訂顏色包（my.css） ===== */
+:root {
+   --bg-color01: #817c7c;
+    --bg-color02: #4a24f3;
+    --bg-color03: #8dc499;
+    --bg-color04: #8cce11;
+    --bg-color05: #d60611;
+    --bg-color06: #bbb6b6;
+    --bg-color07: #000000;
+    --bg-color08: #ffffff;
+    --bg-color09: #ff9aa2;
+    /* 粉紅糖霜 */
+    --bg-color10: #fbc687;
+    /* 橘色奶茶 */
+    --bg-color11: #c1cfff;
+    /* 夢幻天藍 */
+    --bg-color12: #8ae9c1;
+    /* 薄荷綠 */
+    --bg-color13: #ffe066;
+    /* 檸檬黃 */
+    --bg-color14: #d1a3ff;
+    /* 薰衣草紫 */
+    --bg-color15: #ff6f91;
+    /* 覆盆莓紅 */
+    --bg-color16: #0099cc;
+    /* 清新科技藍 */
+    --bg-color17: #3b3b98;
+    /* 藍莓深紫 */
+    --bg-color18: #5c5470;
+    /* 煙燻灰紫 */
+    --bg-color19: rgba(0, 128, 96, 0.7);
+    /*森林綠，透明度保留一點背景紋理 */
+    --bg-color20: rgba(0, 180, 220, 0.7);
+    /* 湖水藍，配上自然綠底不會過於跳脫，透明穩定對比 */
+    --bg-color21: rgba(255, 204, 0, 0.7);
+    /* 橙黃 醒目黃保留提示效果，但用透明減少刺眼感 */
+    --bg-color22: #2e5339;
+    /* 深墨綠 */
+    --bg-color23: #eedc82;
+    /* 卡其黃 */
+    --bg-color24:#6F42C1 ;
+    /* 紫色 */
+
+
+
+  --roller-bg01: #044f0b;     /* 深綠色 */
+  --roller-bg02: #0f7900;     /* 草綠色 */
+  --roller-bg03: #0cff00c4;   /* 螢光黃綠半透 */
+  --roller-bg04: #a4fba2;     /* 草綠亮色 */
+  --roller-bg05: #034f03;     /* 深墨綠 */
+  --roller-bg06: #017e42;     /* 翡翠綠 */
+  --roller-bg07: #00c054;     /* 螢光綠 */
+  --roller-bg08: #066f34;     /* 冷綠色 */
+  --roller-bg09: #032e13;     /* 黑綠 */
+  --roller-bg10: #07945d;     /* 翡翠亮綠 */
+  --roller-bg11: #0000007a;   /* 黑色半透明 */
+}
+
+/* 背景色 */
+.bg-01 {
+    background-color: var(--bg-color01);
+}
+
+.bg-02 {
+    background-color: var(--bg-color02);
+}
+
+.bg-03 {
+    background-color: var(--bg-color03);
+}
+
+.bg-04 {
+    background-color: var(--bg-color04);
+}
+
+.bg-05 {
+    background-color: var(--bg-color05);
+}
+
+.bg-06 {
+    background-color: var(--bg-color06);
+    
+}
+
+.bg-07 {
+    background-color: var(--bg-color07);
+}
+
+.bg-08 {
+    background-color: var(--bg-color08);
+}
+
+.bg-09 {
+    background-color: var(--bg-color09);
+}
+
+.bg-10 {
+    background-color: var(--bg-color10);
+}
+
+.bg-11 {
+    background-color: var(--bg-color11);
+}
+
+.bg-12 {
+    background-color: var(--bg-color12);
+}
+
+.bg-13 {
+    background-color: var(--bg-color13);
+}
+
+.bg-14 {
+    background-color: var(--bg-color14);
+}
+
+.bg-15 {
+    background-color: var(--bg-color15);
+}
+
+.bg-16 {
+    background-color: var(--bg-color16);
+}
+
+.bg-17 {
+    background-color: var(--bg-color17);
+}
+
+.bg-18 {
+    background-color: var(--bg-color18);
+}
+
+.bg-19 {
+    background-color: var(--bg-color19);
+}
+
+.bg-20 {
+    background-color: var(--bg-color20);
+}
+
+.bg-21 {
+    background-color: var(--bg-color21);
+}
+
+.bg-22 {
+    background-color: var(--bg-color22);
+    
+}
+
+.bg-23{
+    background-color: var(--bg-color23);
+}
+
+.bg-24{
+  background-color: var(--bg-color24);
+  color: white;
+}
+
+
+/* ===== section01 背景區塊（履歷） ===== */
+.section01 {
+    background-color: rgba(6, 48, 0, 0.5); /* 背景半透明黑 */
+    padding: 30px;
+    border-radius: 30px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.userimg1 .text {
+    color: #ffffff;  /* 讓文字保持白色、不透明 */
+    font-weight: bold;
+}
+
+
+/* ===== Roller 效果 ===== */
+.roller-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.roller {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--roller-bg11);
+  transform: translateY(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s;
+}
+
+.roller-box:hover .roller {
+  transform: translateY(0);
+}
+
+/* ===== 補充：圖片樣式 ===== */
+.roller-photo {
+  opacity: 0.5;
+}
+
+.roller-photo.custom-big {
+  width: 100%;
+  height: 85%;
+}
+
+.marquee-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 60px; /* 根據你的文字高度調整 */
+}
+
+.marquee-inner {
+  position: absolute;
+  white-space: nowrap;
+  animation: marquee 12s linear infinite;
+}
+
+.marquee-text {
+  font-size: 50px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #000, transparent);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #000, transparent);
+}
+
+body {
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+/* 字體大小 */
+.fw-900 {
+    font-weight: 900;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-100 {
+    font-weight: 100;
+}
