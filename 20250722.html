@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="css/all.min.css">
 </head>
 <style>
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        /* 禁止水平捲動 */
+    }
+
     body {
         background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url(images/moto.jpg);
         background-position: center center;
@@ -45,12 +52,14 @@
         .word01 {
             margin: 0;
             margin-top: 15px;
+            margin-right: 500px;
             width: 100%;
         }
 
         .word02 {
             margin: 0;
-            margin-top: 15px;
+            margin-top: 350px;
+            margin-right: 0px;
             width: 100%;
         }
 
@@ -58,6 +67,7 @@
 </style>
 
 <body>
+    <!-- 選單 -->
     <div class="container-fluid">
         <div class="row">
             <nav class="navbar navbar-expand-lg  bg-dark navbar-dark">
@@ -82,49 +92,30 @@
                                         class="fa-solid fa-timeline text-info"></i>關於我們</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="20250722-3.html" id="navbarDropdown"
-                                    role="button" data-bs-toggle="" aria-expanded="false">
+                                <a class="nav-link " href="20250722-3.html" id="navbarDropdown" role="button"
+                                    data-bs-toggle="" aria-expanded="false">
 
                                     <i class="fa-solid fa-cart-shopping text-danger"></i>
                                     商品介紹
                                 </a>
                             </li>
-
-                                <!-- <div class="dropdown-menu">
-
-                                    <a class="dropdown-item" href="/20250722-3.html">所有車種</a>
-                                    <div class="dropdown-divider"></div>
-                                       
-                                    <a class="dropdown-item" href="20250722-3.html?type=superbike">仿賽</a>
-                                    <div class="dropdown-divider"></div>
-
-                                    <a class="dropdown-item" href="20250722-3.html?type=street">街車</a>
-                                    <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Something else here</a>
-                                  -->
-                                </div>
-                        </ul>
-                        <!--<li class="nav-item">
-                                <a class="nav-link disabled" href="#">Something else</a>
-                            </li>-->
-
-                        <!--<form class="d-flex" role="search">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>-->
                     </div>
+                    </ul>
+
                 </div>
-            </nav>
         </div>
+        </nav>
     </div>
+    </div>
+
     <div class="row">
-        <div class="col-md-6 offset-4">
+        <div class="col-md-6 mb-5 col-12">
             <div class="word01 fs-3 text-white round rounded-5">騎車，不只是移動，更是乘載靈魂的旅行</div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-6 offset-4">
+        <div class="col-md-6 mt-3  col-12">
             <div class="word02 fs-2 text-white round rounded-5">在引擎聲中，慢慢與自己對話</div>
         </div>
     </div>
